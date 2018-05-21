@@ -164,9 +164,13 @@ int main(int argc, char *argv[])
 
     pub_frame = node.advertise<pcl::PointCloud<pcl::PointXYZI> >("/rslidar_points",1);
 //    ros::spin();
-//    std::string tmp_save_path = ros::package::getPath("control_tool") + "/save_data/index/";
-    std::string tmp_save_path = "../save_data/index";
+    std::string tmp_save_path = ros::package::getPath("control_tool") + "/save_data/index/";
+//    std::string tmp_save_path = "/home/zzy/CLionProjects/ROS_Project/ws/src/auto_play/src/play/control_tool/save_data/index";
     g_save_path = tmp_save_path + "/save_index.txt";
+
+    //test
+    std::cout << "PATTTTTTTTTTTTTTH: " << g_save_path << std::endl;
+
     g_outfile.open( g_save_path.c_str(), std::ios::app);
     if( !g_outfile )
         std::cerr << "Fail to open txt file!" << std::endl;
